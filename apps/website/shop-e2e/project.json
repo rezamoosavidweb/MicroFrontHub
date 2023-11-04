@@ -1,0 +1,33 @@
+{
+  "name": "apps/website/shop-e2e",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/website/shop-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/website/shop-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "apps/website/shop:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "apps/website/shop:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "apps/website/shop:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/website/shop-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "implicitDependencies": ["apps/website/shop"],
+  "tags": []
+}

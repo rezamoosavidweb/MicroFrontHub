@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@org/ui": ["libs/shared/ui/src/index.ts"],
       "apps/website/about/Module": ["apps/website/about/src/remote-entry.ts"],
       "apps/website/cart/Module": ["apps/website/cart/src/remote-entry.ts"],
       "apps/website/home/Module": ["apps/website/home/src/remote-entry.ts"],

@@ -1,2 +1,2 @@
 export * from './components/button/Button';
-export * from './components/checkbox/Checkbox';
+export * from './components/dialog/Dialog';

@@ -1,0 +1,58 @@
+/** size */
+.typography__h1 {
+  @apply text-5xl;
+}
+.typography__h2 {
+  @apply text-4xl;
+}
+.typography__h3 {
+  @apply text-3xl;
+}
+.typography__h4 {
+  @apply text-2xl;
+}
+.typography__h5 {
+  @apply text-xl;
+}
+.typography__h6 {
+  @apply text-base;
+}
+.typography__body1 {
+  @apply text-ml;
+}
+.typography__body2 {
+  @apply text-m;
+}
+.typography__subtitle1 {
+  @apply text-m;
+}
+.typography__subtitle2 {
+  @apply text-m;
+}
+.typography__captione1 {
+  @apply text-m;
+}
+/** wight */
+.typography__normal {
+  @apply font-normal;
+}
+.typography__bold {
+  @apply font-bold;
+}
+
+/** color */
+.typography__primary {
+  @apply text-primary-main;
+}
+.typography__secondary {
+  @apply text-secondary-main;
+}
+.typography__success {
+  @apply text-success-main;
+}
+.typography__error {
+  @apply text-error-main;
+}
+.typography__black {
+  @apply text-gray-600;
+}

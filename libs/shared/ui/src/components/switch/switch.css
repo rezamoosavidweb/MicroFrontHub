@@ -1,0 +1,46 @@
+.switch__root {
+  @apply flex relative gap-2 items-center justify-center cursor-pointer;
+}
+.switch__box {
+  @apply relative min-w-[var(--switch-track-width,36px)] 
+  min-h-[max(var(--switch-track-height,16px),var(--switch-thumb-size,20px))];
+}
+.switch__input {
+  @apply hidden;
+}
+.switch__track {
+  @apply absolute rounded-full w-[var(--switch-track-width,36px)] h-[var(--switch-track-height,16px)]
+  bg-gray-200 top-[calc((var(--switch-thumb-size,20px)-var(--switch-track-height,16px))/2)]
+  duration-[var(--switch-duration,300ms)];
+}
+.switch__thumb {
+  @apply bg-white h-[var(--switch-thumb-size,20px)] w-[var(--switch-thumb-size,20px)]
+  absolute left-[var(--switch-offsetX,0px)] top-0  rounded-full transition-all
+  duration-[var(--switch-duration,300ms)] shadow-[var(--switch-thumb-shadow,0px_2px_1px_-1px_rgba(0,0,0,0.2))];
+}
+.switch__input:not(:checked):hover + .switch__box .switch__thumb {
+  @apply ring-[10px] ring-black ring-opacity-5;
+}
+
+.switch__input:checked + .switch__box .switch__thumb {
+  @apply left-[calc(var(--switch-track-width,36px)-var(--switch-thumb-size,20px)-var(--switch-offsetX,0px))];
+}
+.switch__input:checked + .switch__box .switch__thumb--primary {
+  @apply bg-primary-main;
+}
+.switch__input:checked + .switch__box .switch__track--primary {
+  @apply bg-primary-main bg-opacity-40;
+}
+.switch__input:checked + .switch__box .switch__thumb--secondary {
+  @apply bg-secondary-main;
+}
+.switch__input:checked + .switch__box .switch__track--secondary {
+  @apply bg-secondary-main bg-opacity-40;
+}
+
+.switch__root--disabled {
+  @apply cursor-default;
+}
+.switch__input:not(:checked):hover + .switch__box .switch__thumb--disabled {
+  @apply cursor-default ring-0;
+}

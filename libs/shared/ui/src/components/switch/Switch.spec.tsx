@@ -1,0 +1,10 @@
+import { render } from '@testing-library/react';
+
+import Checkbox from './Switch';
+
+describe('Checkbox', () => {
+  it('should render successfully', () => {
+    const { baseElement } = render(<Checkbox size="medium" label="checkbox" />);
+    expect(baseElement).toBeTruthy();
+  });
+});

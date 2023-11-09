@@ -1,0 +1,50 @@
+.btn__main {
+  @apply flex items-center transition-all gap-1.5 outline-none justify-center 
+  rounded-sm w-20 h-9 shadow-button hover:shadow-button-hover active:shadow-button-active;
+}
+
+.btn__main--primary {
+  @apply text-primary-contrastText bg-primary-main hover:bg-primary-hover 
+  active:bg-primary-active disabled:bg-disabled-main [&_path]:fill-white
+  disabled:hover:bg-disabled-main disabled:border-0 disabled:shadow-none;
+}
+.btn__main--secondary {
+  @apply text-secondary-contrastText bg-secondary-main hover:bg-secondary-hover
+  active:bg-secondary-active disabled:bg-disabled-main [&_path]:fill-white
+  disabled:hover:bg-disabled-main disabled:border-0 disabled:shadow-none;
+}
+
+.btn__main--outlined {
+  @apply bg-transparent border shadow-none hover:shadow-none active:shadow-none;
+}
+.btn__main--outlined.btn__main--primary {
+  @apply text-primary-main hover:bg-primary-main hover:bg-opacity-10 
+  [&_path]:fill-primary-main border-primary-main active:bg-opacity-20;
+}
+.btn__main--outlined.btn__main--secondary {
+  @apply text-secondary-main hover:bg-secondary-main hover:bg-opacity-10 
+  [&_path]:fill-secondary-main border-secondary-main active:bg-opacity-20;
+}
+.btn__main--outlined:disabled {
+  @apply disabled:text-white hover:bg-disabled-main hover:bg-opacity-100;
+}
+
+.btn__main--text {
+  @apply bg-transparent border-none text-gray-600 shadow-none hover:shadow-none
+  active:shadow-none [&_path]:fill-gray-600 disabled:bg-disabled-main
+  disabled:hover:shadow-none disabled:hover:bg-opacity-100;
+}
+.btn__main--text.btn__main--primary {
+  @apply hover:bg-primary-main hover:bg-opacity-5 active:bg-opacity-10;
+}
+.btn__main--text.btn__main--secondary {
+  @apply hover:bg-secondary-main hover:bg-opacity-5 active:bg-opacity-10;
+}
+.btn__main--text:disabled {
+  @apply disabled:hover:bg-disabled-main disabled:hover:bg-opacity-100
+  disabled:text-white;
+}
+
+.btn__flexible {
+  @apply w-fit px-2;
+}

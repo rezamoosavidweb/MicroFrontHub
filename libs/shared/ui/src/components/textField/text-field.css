@@ -1,0 +1,78 @@
+.textfield__main {
+  @apply relative !cursor-pointer w-full min-w-[80px] flex-col p-0 box-border
+  inline-flex h-10 rounded-sm;
+}
+.textfield__input {
+  @apply absolute z-10 placeholderShown box-border block h-full rounded-sm
+  w-full min-w-0 border-0 bg-transparent px-3 outline-none ring-0 transition-all;
+}
+.textfield__fieldset {
+  @apply border rounded-sm absolute inset-x-0 -top-[6px] bottom-0 m-0 
+  overflow-hidden border-gray-300 bg-white px-2
+  transition-all group-focus-within/textfield:border-primary-main;
+}
+.textfield__fieldset--error {
+  @apply border-red-600 group-focus-within/textfield:border-red-600;
+}
+.textfield__legend {
+  @apply relative mx-1 max-w-0 h-3 overflow-hidden transition-all
+   group-focus-within/textfield:max-w-full group-focus-within/textfield:px-1.5
+   group-focus-within/textfield:text-m;
+}
+.textfield__label {
+  @apply absolute text-[#2B2B2B] baseDir origin-center text-center transition-all mx-1 
+  group-focus-within/textfield:mx-0 group-focus-within/textfield:-top-[18%]
+  group-focus-within/textfield:text-primary-main cursor-text
+  group-focus-within/textfield:text-m z-10;
+}
+
+.placeholderShown:not(:placeholder-shown) + fieldset + label {
+  @apply -top-[18%] mx-0 text-m;
+}
+.textfield__input:not(:placeholder-shown) + fieldset legend {
+  @apply max-w-full px-1.5;
+}
+.textfield__input fieldset legend {
+  @apply group-focus-within/textfield:max-w-full;
+}
+
+[lang='en'] .baseDir {
+  @apply left-4.5;
+}
+[dir='ltr'] .baseDir {
+  @apply left-4.5;
+}
+[dir='rtl'] .baseDir {
+  @apply right-4.5;
+}
+
+/* inActiveState */
+.focusedState .textfield__fieldset {
+  @apply border-primary-main;
+}
+.focusedState .textfield__legend {
+  @apply max-w-full px-1.5 text-m;
+}
+.focusedState .textfield__label {
+  @apply text-primary-main mx-0 text-m -top-[18%];
+}
+.textfield__disabled {
+  @apply text-gray-300;
+}
+
+/* adornment */
+.textfield__adornment {
+  @apply absolute right-2 z-10 h-full max-w-[30px] flex items-center;
+}
+.textfield__input--adornment {
+  @apply pr-[38px];
+}
+[dir='rtl'] .textfield__adornment {
+  @apply right-[unset] left-2
+}
+[dir='rtl'] .textfield__input--adornment {
+  @apply pr-3 pl-[38px];
+}
+[dir='rtl'] .textfield__label {
+  @apply w-fit;
+}

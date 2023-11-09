@@ -1,0 +1,37 @@
+.radio__root {
+  @apply flex items-center w-fit;
+}
+.radio__label {
+  @apply cursor-pointer w-fit;
+}
+.radio__input {
+  @apply invisible absolute;
+}
+.radio__input + label::before {
+  @apply w-3 h-3 relative mr-2 content-[''] inline-block 
+  align-baseline border-2 border-white ring-1 ring-primary-main
+   cursor-pointer;
+}
+
+.radio__input:checked + label::before {
+  @apply bg-primary-main p-0.5 ring-2 ring-primary-main;
+}
+.radio__input--secondary + label::before {
+  @apply border-white ring-1 ring-secondary-main
+}
+.radio__input--secondary:checked + label::before {
+  @apply bg-secondary-main p-0.5 ring-2 ring-secondary-main;
+}
+.radio__input--disabled + label::before {
+  @apply ring-gray-300 cursor-default;
+}
+.radio__label--disabled {
+  @apply cursor-default;
+}
+/* CUSTOM RADIO AND CHECKBOX STYLES */
+.radio__input + label:before {
+  @apply rounded-full;
+}
+[dir='rtl'] .radio__input + label::before {
+  @apply mr-[unset] ml-2;
+}

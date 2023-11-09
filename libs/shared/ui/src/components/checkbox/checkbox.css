@@ -1,0 +1,37 @@
+.checkbox__root {
+  @apply flex gap-2 items-center justify-center cursor-pointer;
+}
+
+.checkbox__box {
+  @apply flex bg-transparent border-2 items-center 
+  justify-center rounded-xs [&>svg]:hidden [&>svg]:relative 
+  [&>svg]:left-px peer-checked:[&>svg]:block 
+  peer-checked:border-0;
+}
+.checkbox__root--disabled {
+  @apply text-gray-300 cursor-default;
+}
+.checkbox__input {
+  @apply hidden;
+}
+.checkbox__root--padding {
+  @apply p-3;
+}
+.checkbox__box--secondary {
+  @apply border-secondary-main peer-checked:bg-secondary-main;
+}
+.checkbox__box--primary {
+  @apply border-primary-main peer-checked:bg-primary-main;
+}
+.checkbox__box--disabled {
+  @apply border-gray-300 cursor-default;
+}
+.checkbox__box--small {
+  @apply w-4 h-4 [&>svg]:w-3 [&>svg]:h-3;
+}
+.checkbox__box--medium {
+  @apply w-5 h-5;
+}
+.checkbox__box--large {
+  @apply w-6 h-6 [&>svg]:w-5 [&>svg]:h-5;
+}
